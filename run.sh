@@ -1,1 +1,1 @@
-rustc -o app fibonacci.rs && ./app
+rustc -o app hello.rs && ./app
