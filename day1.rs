@@ -90,6 +90,12 @@ fn array_test(){
     println!("{:?}", arr);
 }
 
+fn tuple_test(){
+    let t: (i32, f64, u8) = (500, 6.4, 1);
+    let (x, y, z) = t;
+    println!("{x}, {y}, {z}");
+}
+
 fn main(){
     mutation_test(); // fails if `mut` is not present
     // overflow_test(); // panic: attempt to add with overflow
@@ -102,4 +108,5 @@ fn main(){
     debug_print();
     dbg_macro();
     array_test();
+    tuple_test();
 }
