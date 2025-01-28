@@ -96,6 +96,21 @@ fn tuple_test(){
     println!("{x}, {y}, {z}");
 }
 
+// fn borrowing_reference_test(){
+//     let mut x = 'a';
+//     let y = &x; // ref
+//     println!("borrowing_reference_test: {y}");
+//     *y = 'd';
+// }
+
+fn mutable_reference_test(){
+    let mut x = 'a';
+    let y = &mut x; // ref
+    println!("mutable_reference_test: {y}");
+    *y = 'd';
+    println!("mutable_reference_test: {y}");
+}
+
 fn main(){
     mutation_test(); // fails if `mut` is not present
     // overflow_test(); // panic: attempt to add with overflow
@@ -109,4 +124,6 @@ fn main(){
     dbg_macro();
     array_test();
     tuple_test();
+    // borrowing_reference_test(); //panic: `y` is a `&` reference, so the data it refers to cannot be written
+    mutable_reference_test();
 }
