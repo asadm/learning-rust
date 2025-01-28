@@ -128,6 +128,13 @@ fn string_test(){
     println!("hello {}", s2);
 }
 
+// fn reference_validity_test(){
+//     let x_ref = {
+//         let x = 5;
+//         &x // pass the reference to x_ref, panics rust!
+//     }
+// }
+
 fn main(){
     mutation_test(); // fails if `mut` is not present
     // overflow_test(); // panic: attempt to add with overflow
@@ -145,4 +152,5 @@ fn main(){
     mutable_reference_test();
     slice_test();
     string_test();
+    // reference_validity_test(); // `x` does not live long enough
 }
