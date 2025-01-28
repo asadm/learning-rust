@@ -77,6 +77,13 @@ fn debug_print(){
     println!("{:?}", arr);
 }
 
+fn dbg_macro(){
+    let arr = [1,2,3,4];
+    println!("printing debug print");
+    let passed = dbg!(arr); // print it and pass it through
+    println!("{:?}", passed);
+}
+
 fn main(){
     mutation_test(); // fails if `mut` is not present
     // overflow_test(); // panic: attempt to add with overflow
@@ -87,4 +94,5 @@ fn main(){
     loop_as_expression();
     loop_label_break();
     debug_print();
+    dbg_macro();
 }
