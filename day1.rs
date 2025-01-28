@@ -135,6 +135,34 @@ fn string_test(){
 //     }
 // }
 
+struct Person {
+    name: String,
+    age: u8,
+    country: String,
+}
+
+fn struct_test(){
+    let mut ali = Person {
+        name: String::from("Ali"),
+        age: 27,
+        country: String::from("Pakistan"),
+    };
+
+    let defaults = Person {
+        name: String::from("John"),
+        age: 30,
+        country: String::from("USA"),
+    };
+
+    let mut hamza = Person {
+        name: String::from("Hamza"),
+        ..defaults
+    };
+
+    println!("name: {}, age: {}", hamza.name, hamza.age);
+
+}
+
 fn main(){
     mutation_test(); // fails if `mut` is not present
     // overflow_test(); // panic: attempt to add with overflow
@@ -153,4 +181,5 @@ fn main(){
     slice_test();
     string_test();
     // reference_validity_test(); // `x` does not live long enough
+    struct_test();
 }
