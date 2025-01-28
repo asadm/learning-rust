@@ -1,0 +1,1 @@
+Essentially following https://google.github.io/comprehensive-rust/
