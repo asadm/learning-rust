@@ -1,1 +1,1 @@
-rustc -o app day1.rs && ./app
+rustc -o app geometry.rs && ./app
