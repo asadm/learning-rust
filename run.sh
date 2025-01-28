@@ -1,1 +1,1 @@
-rustc -o app hello.rs && ./app
+rustc -o app collatz.rs && ./app
