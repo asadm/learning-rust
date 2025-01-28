@@ -111,6 +111,23 @@ fn mutable_reference_test(){
     println!("mutable_reference_test: {y}");
 }
 
+fn slice_test(){
+    let arr = [1,2,3,4];
+    println!("{:?}", arr);
+    let slice = &arr[1..3];
+    println!("{:?}", slice);
+}
+
+fn string_test(){
+    let s: &str = "World";
+    println!("hello {}", s);
+
+    // owned
+    let mut s2: String = String::from("World");
+    s2.push_str("!");
+    println!("hello {}", s2);
+}
+
 fn main(){
     mutation_test(); // fails if `mut` is not present
     // overflow_test(); // panic: attempt to add with overflow
@@ -126,4 +143,6 @@ fn main(){
     tuple_test();
     // borrowing_reference_test(); //panic: `y` is a `&` reference, so the data it refers to cannot be written
     mutable_reference_test();
+    slice_test();
+    string_test();
 }
