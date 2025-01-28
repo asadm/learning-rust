@@ -163,6 +163,25 @@ fn struct_test(){
 
 }
 
+#[derive(Debug)] // allows dbg printing
+enum Direction {
+    Left,
+    Right
+}
+
+#[derive(Debug)]
+enum PlayerMove {
+    Run(Direction),
+    Teleport(i32, i32),
+}
+
+fn enum_test(){
+    let run_left = PlayerMove::Run(Direction::Left);
+    let teleport = PlayerMove::Teleport(10, 20);
+    println!("{:?}", run_left);
+    println!("{teleport:?}");
+}
+
 fn main(){
     mutation_test(); // fails if `mut` is not present
     // overflow_test(); // panic: attempt to add with overflow
@@ -182,4 +201,5 @@ fn main(){
     string_test();
     // reference_validity_test(); // `x` does not live long enough
     struct_test();
+    enum_test();
 }
