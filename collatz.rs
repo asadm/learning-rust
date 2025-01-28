@@ -1,6 +1,6 @@
 fn collatz_length(mut n: u32) -> u32{
     assert!(n>0, "n must be positive");
-    let mut count = 0;
+    let mut count = 1;
     while n!=1{
         dbg!(n);
         if n%2==0{
@@ -15,6 +15,6 @@ fn collatz_length(mut n: u32) -> u32{
 }
 
 fn main(){
-    let n = collatz_length(12);
+    let n = collatz_length(11);
     println!("collatz_length is {n}");
 }
