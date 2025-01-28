@@ -1,1 +1,1 @@
-rustc -o app collatz.rs && ./app
+rustc -o app day1.rs && ./app

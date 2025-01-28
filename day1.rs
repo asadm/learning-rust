@@ -84,6 +84,12 @@ fn dbg_macro(){
     println!("{:?}", passed);
 }
 
+fn array_test(){
+    let mut arr: [i8; 4] = [1,2,3,4];
+    arr[3] = 14;
+    println!("{:?}", arr);
+}
+
 fn main(){
     mutation_test(); // fails if `mut` is not present
     // overflow_test(); // panic: attempt to add with overflow
@@ -95,4 +101,5 @@ fn main(){
     loop_label_break();
     debug_print();
     dbg_macro();
+    array_test();
 }
