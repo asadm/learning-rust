@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 #[derive(Debug)]
 struct Car {
     name: String,
@@ -65,10 +67,30 @@ fn trait_bound_test<T: std::fmt::Debug>(x: T){
     println!("I am sure this is dbg printable: {:?}", x);
 }
 
+fn vec_test(){
+    let mut v = vec![1,2,3,4];
+    println!("{:?}", v);
+    println!("len: {}, cap: {}", v.len(), v.capacity());
+    v.push(5);
+    println!("len: {}, cap: {}", v.len(), v.capacity());
+}
+
+fn hashmap_test(){
+    let mut map = HashMap::new();
+    map.insert(1, "one");
+    map.insert(2, "two");
+    println!("{:?}", map);
+    let a = map.get(&1);
+    println!("{:?}", a);
+}
+
+
 fn main(){
     methods_test();
     trait_test();
     println!("{}", generic_test(1, "even", "odd"));
     trait_bound_test(1);
     trait_bound_test("hello");
+    vec_test();
+    hashmap_test();
 }
