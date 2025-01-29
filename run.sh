@@ -1,1 +1,1 @@
-rustc -o app day2.rs && ./app
+rustc -o app counter.rs && ./app
