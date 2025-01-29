@@ -1,1 +1,1 @@
-rustc -o app elevator.rs && ./app
+rustc -o app day2.rs && ./app
