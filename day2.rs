@@ -52,8 +52,23 @@ fn trait_test(){
     println!("{}", asad.walk(1,2));
 }
 
+fn generic_test<T>(n: i32, x: T, y: T) -> T{
+    if n%2==0 {
+        x
+    }
+    else{
+        y
+    }
+}
+
+fn trait_bound_test<T: std::fmt::Debug>(x: T){
+    println!("I am sure this is dbg printable: {:?}", x);
+}
 
 fn main(){
     methods_test();
     trait_test();
+    println!("{}", generic_test(1, "even", "odd"));
+    trait_bound_test(1);
+    trait_bound_test("hello");
 }
