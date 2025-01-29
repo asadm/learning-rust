@@ -1,1 +1,1 @@
-rustc -o app counter.rs && ./app
+rustc -o app rot13.rs && ./app
