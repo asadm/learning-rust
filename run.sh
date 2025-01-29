@@ -1,1 +1,1 @@
-rustc -o app rot13.rs && ./app
+rustc -o app verbosity_filter_closure.rs && ./app
