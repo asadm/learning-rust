@@ -12,12 +12,12 @@ impl Logger for StderrLogger {
 }
 
 /// Only log messages up to the given verbosity level.
-struct VerbosityFilter {
+struct VerbosityFilter<L: Logger> {
     max_verbosity: u8,
-    inner: StderrLogger,
+    inner: L,
 }
 
-impl Logger for VerbosityFilter {
+impl <L:Logger> Logger for VerbosityFilter<L> {
     fn log(&self, verbosity: u8, message: &str) {
         if verbosity <= self.max_verbosity {
             self.inner.log(verbosity, message);
