@@ -54,11 +54,25 @@ fn drop_test(){
     println!("Exiting scope:{a:?}");
 }
 
+fn box_test(){
+    let b = Box::new(10);
+    println!("box: {b}");
+    println!("box {}", *b);
+}
+
+use std::rc::Rc;
+fn rc_test(){
+    let a = Rc::new(String::from("hello"));
+    let b = Rc::clone(&a);
+    println!("a: {a}");
+    println!("b: {b}");
+}
 
 fn main(){
     transfer_ownership_test();
     clone_test();
     copy_test();
     drop_test();
-
+    box_test();
+    rc_test();
 }
