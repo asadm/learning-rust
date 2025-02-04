@@ -68,6 +68,42 @@ fn rc_test(){
     println!("b: {b}");
 }
 
+/////
+struct Dog {
+    name: String,
+    age: i8
+}
+
+struct Cat {
+    lives: i8
+}
+
+trait Pet {
+    fn talk(&self) -> String;
+}
+
+impl Pet for Cat {
+    fn talk(&self) -> String {
+        format!("Meow, I have {} lives!", self.lives)
+    }
+}
+
+impl Pet for Dog {
+    fn talk(&self) -> String {
+        format!("Woof, my name is {}!", self.name)
+    }
+}
+
+fn owned_trait_test(){ // dyn vec 
+    let pets: Vec<Box<dyn Pet>> = vec![
+        Box::new(Dog{name: String::from("Pup!"), age: 1}),
+        Box::new(Cat{lives: 9}),
+    ];
+    for pet in pets{
+        println!("{}", pet.talk());
+    }
+}
+
 fn main(){
     transfer_ownership_test();
     clone_test();
@@ -75,4 +111,5 @@ fn main(){
     drop_test();
     box_test();
     rc_test();
+    owned_trait_test();
 }
