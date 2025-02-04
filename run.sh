@@ -1,1 +1,1 @@
-rustc -g -o app health_stats.rs && ./app
+rustc -g -o app protobuf_parsing.rs && ./app
