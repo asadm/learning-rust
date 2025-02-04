@@ -1,1 +1,1 @@
-rustc -o app verbosity_filter_closure.rs && ./app
+rustc -o app day3.rs && ./app
