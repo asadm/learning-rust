@@ -104,6 +104,15 @@ fn owned_trait_test(){ // dyn vec
     }
 }
 
+fn borrow_checker_test(){
+    let x_ref = {
+        let x = 10;
+        &x // panic: borrowed value does not live long enough
+    };
+
+    println!{"x_ref: {x_ref}"};
+}
+
 fn main(){
     transfer_ownership_test();
     clone_test();
@@ -112,4 +121,5 @@ fn main(){
     box_test();
     rc_test();
     owned_trait_test();
+    borrow_checker_test();
 }
