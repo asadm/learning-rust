@@ -1,1 +1,1 @@
-rustc -g -o app day3.rs && ./app
+rustc -g -o app health_stats.rs && ./app
