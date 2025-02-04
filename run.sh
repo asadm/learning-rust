@@ -1,1 +1,1 @@
-rustc -o app day3.rs && ./app
+rustc -g -o app binary_tree.rs && ./app
