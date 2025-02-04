@@ -1,1 +1,1 @@
-rustc -o app day3.rs && ./app
+rustc -o app builder_type.rs && ./app
